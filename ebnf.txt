@@ -1,0 +1,73 @@
+PROGRAM = GENESIS, { STATEMENT } ;
+
+GENESIS = "genesis", "satoshi",
+          "supply", NUMBER,
+          "reward", NUMBER,
+          "start_price", NUMBER ;
+
+STATEMENT = WALLET
+          | TRANSACTION
+          | MINING
+          | MARKET
+          | BLOCKCHAIN
+          | IFSTMT
+          | LOOP
+          | TRADING_LOOP
+          | MARKET_LOOP
+          | STRATEGYDEC
+          | STRATEGYCALL
+          | BATTLE ;
+
+WALLET = "wallet", IDENTIFIER ;
+
+MINING = IDENTIFIER, "mine" ;
+
+TRANSACTION = IDENTIFIER, "->", IDENTIFIER, ":", NUMBER ;
+
+MARKET = "market"
+       | "market", "update" ;
+
+BLOCKCHAIN = "showchain" ;
+
+IFSTMT = "if", CONDITION, "{", { STATEMENT }, "}",
+          [ "else", "{", { STATEMENT }, "}" ] ;
+
+LOOP = WHILE_LOOP
+     | FOR_LOOP ;
+
+WHILE_LOOP = "while", CONDITION, "{", { STATEMENT }, "}" ;
+
+FOR_LOOP = "for", NUMBER, "{", { STATEMENT }, "}" ;
+
+TRADING_LOOP = "buy_the_dip", NUMBER, "{", { STATEMENT }, "}"
+             | "take_profit_until", NUMBER, "{", { STATEMENT }, "}"
+             | "hodl_until", NUMBER, "{", { STATEMENT }, "}"
+             | "scalp_for", NUMBER, "{", { STATEMENT }, "}" ;
+
+MARKET_LOOP = "market_for", NUMBER, "{", { STATEMENT }, "}" ;
+
+BATTLE = "battle", IDENTIFIER, "vs", IDENTIFIER ;
+
+STRATEGYDEC = "strategy", IDENTIFIER, 
+              "(", [ PARAMS ], ")", 
+              "{", { STATEMENT }, "}" ;
+
+PARAMS = IDENTIFIER, { ",", IDENTIFIER } ;
+
+STRATEGYCALL = "call", IDENTIFIER, 
+               "(", [ ARGS ], ")" ;
+
+ARGS = (IDENTIFIER | NUMBER), { ",", (IDENTIFIER | NUMBER) } ;
+
+CONDITION = "saldo", IDENTIFIER, REL_OP, NUMBER
+          | "market", REL_OP, NUMBER ;
+
+REL_OP = ">" | "<" | "==" | "!=" | ">=" | "<=" ;
+
+IDENTIFIER = LETTER, { LETTER | DIGIT | "_" } ;
+
+NUMBER = DIGIT, { DIGIT } ;
+
+LETTER = "a" | ... | "z" | "A" | ... | "Z" ;
+
+DIGIT = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
