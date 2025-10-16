@@ -1,0 +1,31 @@
+# Arquivos gerados pelo Flex e Bison
+lex.yy.c
+parser.tab.c
+parser.tab.h
+
+# Executável
+btc_parser
+
+# Arquivos objeto
+*.o
+
+# Arquivos temporários
+*.tmp
+*.swp
+*~
+
+# Arquivos de debug
+*.dSYM/
+*.out
+
+# Arquivos do macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Arquivos do Cursor
+.cursor/
+
+# Logs
+*.log
+

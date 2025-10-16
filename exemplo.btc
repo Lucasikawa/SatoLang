@@ -1,0 +1,207 @@
+// SatoLang - Arquivo de Exemplo Completo
+// Este arquivo testa todas as funcionalidades da linguagem
+// Linguagens e Paradigmas - APS Etapa 2
+
+// ========== BLOCO GENESIS (obrigatório) ==========
+// Define os parâmetros iniciais da blockchain
+genesis satoshi supply 21000000 reward 50 start_price 1000
+
+// ========== CRIAÇÃO DE WALLETS ==========
+wallet alice
+wallet bob
+wallet charlie
+wallet satoshi_nakamoto
+
+// ========== OPERAÇÕES DE MINERAÇÃO ==========
+alice mine
+bob mine
+satoshi_nakamoto mine
+
+// ========== TRANSAÇÕES ==========
+alice -> bob : 100
+bob -> charlie : 50
+charlie -> alice : 25
+satoshi_nakamoto -> alice : 1000
+
+// ========== OPERAÇÕES DE MERCADO ==========
+market
+market update
+
+// ========== VISUALIZAÇÃO DA BLOCKCHAIN ==========
+showchain
+
+// ========== ESTRUTURAS CONDICIONAIS ==========
+// Testa if simples
+if saldo alice > 500 {
+    alice -> bob : 100
+    market update
+}
+
+// Testa if-else
+if market >= 50000 {
+    alice -> bob : 50
+} else {
+    bob mine
+}
+
+// Condição com diferentes operadores
+if saldo bob != 0 {
+    bob -> charlie : 10
+}
+
+if market < 30000 {
+    alice mine
+    bob mine
+}
+
+// ========== LOOPS TRADICIONAIS ==========
+// Loop for (número fixo de iterações)
+for 5 {
+    alice mine
+    market update
+}
+
+// Loop while (condicional)
+while saldo alice < 1000 {
+    alice mine
+}
+
+// ========== TRADING LOOPS (específicos da linguagem) ==========
+// Compra na queda
+buy_the_dip 10 {
+    alice -> bob : 1
+    market update
+}
+
+// Take profit até atingir preço
+take_profit_until 60000 {
+    bob -> alice : 5
+}
+
+// HODL até preço alvo
+hodl_until 100000 {
+    market update
+}
+
+// Scalping rápido
+scalp_for 20 {
+    alice -> bob : 1
+    bob -> alice : 1
+}
+
+// Loop de mercado
+market_for 15 {
+    market update
+    alice mine
+}
+
+// ========== DECLARAÇÃO DE ESTRATÉGIAS ==========
+// Estratégia sem parâmetros
+strategy simple_mine() {
+    alice mine
+    bob mine
+    market update
+}
+
+// Estratégia com parâmetros
+strategy pump_and_dump(trader, target_price) {
+    buy_the_dip 5 {
+        alice -> bob : 10
+    }
+    take_profit_until 70000 {
+        bob -> alice : 5
+    }
+}
+
+// Estratégia complexa com múltiplos parâmetros
+strategy advanced_trading(wallet1, wallet2, amount, cycles) {
+    for 10 {
+        alice -> bob : 50
+        market update
+    }
+    
+    if market > 50000 {
+        bob -> alice : 25
+    } else {
+        alice mine
+    }
+    
+    hodl_until 80000 {
+        market update
+    }
+}
+
+// ========== CHAMADAS DE ESTRATÉGIAS ==========
+// Chamada sem argumentos
+call simple_mine()
+
+// Chamada com argumentos (identificadores e números)
+call pump_and_dump(alice, 75000)
+
+// Chamada com múltiplos argumentos
+call advanced_trading(alice, bob, 100, 50)
+
+// ========== BATALHAS ==========
+battle alice vs bob
+battle charlie vs satoshi_nakamoto
+battle alice vs charlie
+
+// ========== TESTE DE ANINHAMENTO ==========
+// Estruturas aninhadas para testar a robustez do parser
+if saldo alice > 1000 {
+    for 3 {
+        alice -> bob : 10
+        
+        if market < 40000 {
+            bob mine
+        } else {
+            market update
+        }
+    }
+    
+    buy_the_dip 5 {
+        alice -> charlie : 5
+    }
+}
+
+// Loop while com estruturas internas
+while saldo bob < 500 {
+    bob mine
+    
+    if market > 45000 {
+        bob -> alice : 20
+    }
+    
+    market update
+}
+
+// Estratégia com estruturas complexas
+strategy mega_strategy(w1, w2, w3) {
+    for 5 {
+        alice mine
+        bob mine
+    }
+    
+    if saldo alice >= 1000 {
+        alice -> bob : 100
+        
+        buy_the_dip 3 {
+            bob -> charlie : 10
+        }
+    } else {
+        while saldo bob < 200 {
+            bob mine
+        }
+    }
+    
+    battle alice vs bob
+}
+
+call mega_strategy(alice, bob, charlie)
+
+// ========== FIM DO PROGRAMA ==========
+// Operações finais
+showchain
+market
+battle alice vs bob
+

@@ -1,0 +1,16 @@
+// Exemplo simples e minimalista da SatoLang
+// Testa apenas as funcionalidades básicas
+
+genesis satoshi supply 21000000 reward 50 start_price 1000
+
+wallet alice
+wallet bob
+
+alice mine
+bob mine
+
+alice -> bob : 50
+
+market
+showchain
+

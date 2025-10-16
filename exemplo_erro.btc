@@ -1,0 +1,7 @@
+// Arquivo com ERROS SINTÁTICOS para testar o tratamento de erros
+
+// ❌ ERRO: falta o bloco genesis
+wallet alice
+
+alice mine
+
