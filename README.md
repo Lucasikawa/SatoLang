@@ -333,7 +333,3 @@ Este projeto é desenvolvido para fins educacionais.
 - [Documentação do Flex](https://github.com/westes/flex)
 - [Documentação do Bison](https://www.gnu.org/software/bison/)
 - [EBNF - Extended Backus-Naur Form](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form)
-
----
-
-**Desenvolvido com ❤️ para a disciplina de Linguagens e Paradigmas**
