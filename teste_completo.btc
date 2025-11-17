@@ -1,0 +1,60 @@
+// Programa SatoLang Completo
+// Demonstra todas as funcionalidades da linguagem
+
+// ========== GENESIS (obrigatório) ==========
+genesis satoshi supply 21000000 reward 50 start_price 1000
+
+// ========== CRIAÇÃO DE WALLETS ==========
+wallet alice
+wallet bob
+wallet charlie
+
+// ========== MINERAÇÃO ==========
+alice mine
+alice mine
+bob mine
+
+// ========== TRANSAÇÕES ==========
+alice -> bob : 30
+bob -> charlie : 15
+
+// ========== MERCADO ==========
+market
+market update
+
+// ========== CONDICIONAIS ==========
+if saldo alice > 50 {
+    alice -> charlie : 10
+}
+
+if market < 2000 {
+    bob mine
+}
+
+// ========== LOOPS ==========
+for 3 {
+    charlie mine
+}
+
+while saldo charlie < 200 {
+    charlie mine
+}
+
+// ========== TRADING LOOPS ==========
+buy_the_dip 2 {
+    market update
+}
+
+hodl_until 5000 {
+    market update
+}
+
+// ========== VISUALIZAR BLOCKCHAIN ==========
+showchain
+
+// ========== BATALHAS ==========
+battle alice vs bob
+battle bob vs charlie
+
+// ========== FIM ==========
+market

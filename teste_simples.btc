@@ -1,0 +1,20 @@
+// Programa SatoLang Simples
+// Testa funcionalidades básicas da VM
+
+genesis satoshi supply 21000000 reward 50 start_price 1000
+
+wallet alice
+wallet bob
+
+alice mine
+alice mine
+bob mine
+
+alice -> bob : 30
+
+market
+market update
+
+showchain
+
+battle alice vs bob

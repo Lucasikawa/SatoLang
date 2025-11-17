@@ -1,10 +1,18 @@
 # Arquivos gerados pelo Flex e Bison
 lex.yy.c
+lexer_codegen.c
 parser.tab.c
 parser.tab.h
+codegen.tab.c
+codegen.tab.h
 
-# Executável
+# Executáveis
 btc_parser
+btc_compiler
+btc_vm
+
+# Arquivos Assembly gerados
+*.asm
 
 # Arquivos objeto
 *.o
